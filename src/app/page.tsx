@@ -1,30 +1,32 @@
 "use client";
 
-import styled from "styled-components";
-
-const Container = styled.main`
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 60px 20px;
-  text-align: center;
-`;
-
-const Title = styled.h1`
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 16px;
-`;
-
-const Description = styled.p`
-  font-size: 1.1rem;
-  color: #666;
-`;
+import HeroSection from "@/components/HeroSection";
+import IntroSection from "@/components/IntroSection";
+import QuoteGrid from "@/components/QuoteGrid";
+import StatsSection from "@/components/StatsSection";
+import ArticleCardsGrid from "@/components/ArticleCardsGrid";
+import CaseStudy from "@/components/CaseStudy";
+import ArticleSection from "@/components/ArticleSection";
+import { caseStudiesData, articleSectionsData } from "@/data/content";
 
 export default function Home() {
   return (
-    <Container>
-      <Title>국민일보 인터렉티브</Title>
-      <Description>인터렉티브 기사 프로젝트</Description>
-    </Container>
+    <main>
+      <HeroSection />
+      <IntroSection />
+      <QuoteGrid />
+      <StatsSection />
+      <ArticleCardsGrid />
+
+      {/* Case Studies Section */}
+      {caseStudiesData.map((caseStudy, index) => (
+        <CaseStudy key={caseStudy.id} {...caseStudy} imageRight={index % 2 !== 0} />
+      ))}
+
+      {/* Article Sections */}
+      {articleSectionsData.map((article) => (
+        <ArticleSection key={article.id} {...article} />
+      ))}
+    </main>
   );
 }
