@@ -840,6 +840,99 @@
     <script defer="" src="./static/story.574151.min.js"></script>
     <script defer="" src="./static/scrollpoints.574151.min.js"></script>
     <script defer="" src="./static/footer.574151.min.js"></script>
+    <style>
+      :root {
+        --kmib-header-offset: 52px;
+      }
+
+      html {
+        scroll-padding-top: var(--kmib-header-offset);
+      }
+
+      .Story-Header {
+        z-index: 1200;
+      }
+
+      .Header.Theme-Header {
+        position: relative;
+      }
+
+      .kmib-series-title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: calc(100% - 160px);
+        padding: 0 16px;
+        color: #ffffff;
+        font-family: Lato, "Noto Sans KR", sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        pointer-events: none;
+      }
+
+      .kmib-hero-credits {
+        position: relative;
+      }
+
+      @media (min-width: 996px) {
+        .kmib-hero-credits {
+          transform: translateY(28px);
+        }
+      }
+
+      html.kmib-scroll-gated-ready .kmib-article-section {
+        display: none;
+      }
+
+      html.kmib-guide-hidden .kmib-guide-section {
+        display: none;
+      }
+
+      html.kmib-scroll-gated-ready .kmib-article-section.is-active {
+        display: block;
+      }
+
+      .Theme-Footer {
+        padding: 36px 0 48px;
+        background-color: #ffffff;
+      }
+
+      .Theme-FooterTopLink {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 84px;
+        height: 42px;
+        margin: 0 auto;
+        border-radius: 999px;
+        background: #ffffff;
+        color: #111111;
+        font-family: Lato, "Noto Sans KR", sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        box-shadow: none;
+      }
+
+      body.kmib-article-open .Theme-Footer {
+        display: none;
+      }
+
+      @media (max-width: 767.98px) {
+        .kmib-series-title {
+          max-width: calc(100% - 96px);
+          font-size: 12px;
+          letter-spacing: 0.02em;
+        }
+      }
+    </style>
     <title>AI와의 위험한 대화 - 국민일보</title>
   </head>
 
@@ -847,6 +940,7 @@
     <div class="Core--rootElement FullSize--fullWidth PositionSticky Levels--header HeaderBarContainer Theme-HeaderContainer Story-Header Theme-Section-Custom Theme-BackgroundColorCustom-AnG4tl Theme-ForegroundColorCustom-J65g55" data-fixed-story-element="true" data-story-id="BAL9ABYJlR">
       <div class="Header Layout Theme-Header">
         <div class="Theme-Logos"></div>
+        <div class="kmib-series-title">AI와의 위험한 대화-국민일보</div>
         <nav class="Navigation Theme-NavigationBar Theme-Section-Custom Theme-BackgroundColorCustom-AnG4tl Theme-ForegroundColorCustom-J65g55" role="navigation" id="navigation">
           <ul class="Navigation__itemList Theme-Navigation-ItemList"></ul>
         </nav>
@@ -873,7 +967,7 @@
                     <div class="Theme-Layer-BodyText-Spacer Theme-SpacerSize-10"></div>
                     <p class=""></p>
                     <p class="Theme-TextSize-smallest"></p>
-                    <p class="Theme-TextSize-smallest"><span class="Theme-ForegroundColorCustom-g30s9z"><strong>국민일보 이슈탐사팀</strong></span><strong><br>기획·제작 </strong>김판 김지훈 이강민<strong> </strong>김연우 이주은 기자<br><br>발행일 2026.02.07.</p>
+                    <p class="Theme-TextSize-smallest kmib-hero-credits"><span class="Theme-ForegroundColorCustom-g30s9z"><strong>국민일보 이슈탐사팀</strong></span><strong><br>기획·제작 </strong>김판 김지훈 이강민<strong> </strong>김연우 이주은 기자<br><br>발행일 2026.02.07.</p>
                   </div>
                 </div>
               </div>
@@ -1735,7 +1829,7 @@
                       <div class="InnerText Theme-Layer-BodyText">
                         <div class="Theme-Layer-BodyText--inner">
                           <p class="Theme-TextSize-xxxsmall"></p>
-                          <div style="font-family:PT Serif,serif" class="InlineElement InlineElement--Button__container h-align-center Theme-ButtonSize-small"><a href="#" style="font-family:PT Serif,serif" class="InlineElement--Button Theme-Layer-BodyText-Button Theme-BackgroundColor-6">다시 처음으로</a></div>
+                          <div style="font-family:PT Serif,serif" class="InlineElement InlineElement--Button__container h-align-center Theme-ButtonSize-small"><a href="#section-FB5fGPm547" style="font-family:PT Serif,serif" class="InlineElement--Button Theme-Layer-BodyText-Button Theme-BackgroundColor-6">다시 처음으로</a></div>
                         </div>
                       </div>
                     </div>
@@ -3654,6 +3748,316 @@
         <div class="Layout FullSize--fullHeight"><a id="BAL9ABYJlR-footerTopLink" href="#article" class="Layout__snap--xcenter Layout__snap--ycenter Theme-FooterTopLink">Top</a></div>
       </div>
     </article>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var html = document.documentElement;
+        var body = document.body;
+        var header = document.querySelector(".Story-Header");
+        var guideSectionIds = [
+          "section-FB5fGPm547",
+          "section-oxUyL2kwQB",
+          "section-mZqZgsngUg",
+          "section-n4J00QkmzS",
+          "section-2q85R0TIXS"
+        ];
+        var articleSectionIds = [
+          "section--fShA50SjpZ",
+          "section--NbMdI6anLc",
+          "section--oqKWRj30Ni",
+          "section--iQc6vzcchz",
+          "section--j37NUJhaWn",
+          "section--IY1VEyX0ms",
+          "section--lhai1oCvAQ",
+          "section--OcgNfAI9bT",
+          "section--HBTuV8TRTR",
+          "section--D7Q1ttaJs4",
+          "section---w41YGp5szF",
+          "section--2cAmJjNA6p",
+          "section--XhemP6ssbU",
+          "section-AI-SjGb7kVouo",
+          "section-10-Wdse5ezWCf",
+          "section--YHU1FKkKDn",
+          "section--YuJhCB1rFB",
+          "section-AI-VFon6JZAOE",
+          "section--1U12RxmsTK",
+          "section--TX9BbeYVO7"
+        ];
+        var activeSection = null;
+        var guideHeight = 0;
+        var closeAfterScrollTimer = null;
+        var closeFallbackTimer = null;
+        var closeScrollHandler = null;
+        var openAfterScrollTimer = null;
+        var openFallbackTimer = null;
+        var openScrollHandler = null;
+
+        function setHeaderOffset() {
+          var headerOffset = header ? Math.round(header.getBoundingClientRect().height) : 52;
+          html.style.setProperty("--kmib-header-offset", headerOffset + "px");
+        }
+
+        function isGuideSection(id) {
+          return guideSectionIds.indexOf(id) !== -1;
+        }
+
+        function isArticleSection(id) {
+          return articleSectionIds.indexOf(id) !== -1;
+        }
+
+        function syncLayout() {
+          window.dispatchEvent(new Event("resize"));
+          window.dispatchEvent(new Event("scroll"));
+        }
+
+        function scrollToSection(targetId, behavior) {
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          var headerOffset = parseInt(
+            getComputedStyle(html).getPropertyValue("--kmib-header-offset"),
+            10
+          ) || 0;
+          var targetTop = Math.max(
+            0,
+            target.getBoundingClientRect().top + window.pageYOffset - headerOffset
+          );
+
+          window.scrollTo({
+            top: targetTop,
+            behavior: behavior || "smooth"
+          });
+        }
+
+        function getGuideHeight() {
+          var firstGuideSection = document.getElementById(guideSectionIds[0]);
+          var lastGuideSection = document.getElementById(
+            guideSectionIds[guideSectionIds.length - 1]
+          );
+
+          if (!firstGuideSection || !lastGuideSection) {
+            return guideHeight;
+          }
+
+          var firstTop = firstGuideSection.getBoundingClientRect().top + window.pageYOffset;
+          var lastBottom = lastGuideSection.getBoundingClientRect().bottom + window.pageYOffset;
+
+          return Math.max(0, lastBottom - firstTop);
+        }
+
+        function hideGuideSections() {
+          guideHeight = getGuideHeight();
+          html.classList.add("kmib-guide-hidden");
+          syncLayout();
+          window.scrollTo({
+            top: 0,
+            behavior: "auto"
+          });
+        }
+
+        function showGuideSections(preserveArticlePosition) {
+          var currentScrollTop = window.pageYOffset;
+          html.classList.remove("kmib-guide-hidden");
+          syncLayout();
+
+          if (preserveArticlePosition && guideHeight > 0) {
+            window.scrollTo({
+              top: currentScrollTop + guideHeight,
+              behavior: "auto"
+            });
+          }
+        }
+
+        function finishClose() {
+          if (activeSection) {
+            activeSection.classList.remove("is-active");
+            activeSection.setAttribute("aria-hidden", "true");
+            activeSection = null;
+          }
+
+          body.classList.remove("kmib-article-open");
+          html.classList.remove("kmib-article-is-open");
+          syncLayout();
+        }
+
+        function clearOpenAfterScroll() {
+          if (openAfterScrollTimer) {
+            window.clearTimeout(openAfterScrollTimer);
+            openAfterScrollTimer = null;
+          }
+
+          if (openFallbackTimer) {
+            window.clearTimeout(openFallbackTimer);
+            openFallbackTimer = null;
+          }
+
+          if (openScrollHandler) {
+            window.removeEventListener("scroll", openScrollHandler);
+            openScrollHandler = null;
+          }
+        }
+
+        function clearCloseAfterScroll() {
+          if (closeAfterScrollTimer) {
+            window.clearTimeout(closeAfterScrollTimer);
+            closeAfterScrollTimer = null;
+          }
+
+          if (closeFallbackTimer) {
+            window.clearTimeout(closeFallbackTimer);
+            closeFallbackTimer = null;
+          }
+
+          if (closeScrollHandler) {
+            window.removeEventListener("scroll", closeScrollHandler);
+            closeScrollHandler = null;
+          }
+        }
+
+        function queueBoundaryLockAfterScroll() {
+          clearOpenAfterScroll();
+
+          openScrollHandler = function() {
+            if (openAfterScrollTimer) {
+              window.clearTimeout(openAfterScrollTimer);
+            }
+
+            openAfterScrollTimer = window.setTimeout(function() {
+              clearOpenAfterScroll();
+              hideGuideSections();
+            }, 160);
+          };
+
+          window.addEventListener("scroll", openScrollHandler, {
+            passive: true
+          });
+          openScrollHandler();
+
+          openFallbackTimer = window.setTimeout(function() {
+            clearOpenAfterScroll();
+            hideGuideSections();
+          }, 1400);
+        }
+
+        function queueCloseAfterScroll() {
+          clearCloseAfterScroll();
+
+          closeScrollHandler = function() {
+            if (closeAfterScrollTimer) {
+              window.clearTimeout(closeAfterScrollTimer);
+            }
+
+            closeAfterScrollTimer = window.setTimeout(function() {
+              clearCloseAfterScroll();
+              finishClose();
+            }, 160);
+          };
+
+          window.addEventListener("scroll", closeScrollHandler, {
+            passive: true
+          });
+          closeScrollHandler();
+
+          closeFallbackTimer = window.setTimeout(function() {
+            clearCloseAfterScroll();
+            finishClose();
+          }, 1400);
+        }
+
+        function openArticle(targetId) {
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          clearOpenAfterScroll();
+          clearCloseAfterScroll();
+          showGuideSections(false);
+
+          if (activeSection && activeSection !== target) {
+            activeSection.classList.remove("is-active");
+            activeSection.setAttribute("aria-hidden", "true");
+          }
+
+          activeSection = target;
+          body.classList.add("kmib-article-open");
+          html.classList.add("kmib-article-is-open");
+          target.classList.add("is-active");
+          target.setAttribute("aria-hidden", "false");
+
+          requestAnimationFrame(function() {
+            syncLayout();
+            scrollToSection(targetId, "smooth");
+            queueBoundaryLockAfterScroll();
+          });
+        }
+
+        function closeArticle(targetId) {
+          clearOpenAfterScroll();
+          showGuideSections(true);
+          scrollToSection(targetId, "smooth");
+          queueCloseAfterScroll();
+        }
+
+        setHeaderOffset();
+        window.addEventListener("resize", setHeaderOffset);
+
+        guideSectionIds.forEach(function(id) {
+          var section = document.getElementById(id);
+          if (section) {
+            section.classList.add("kmib-guide-section");
+          }
+        });
+
+        articleSectionIds.forEach(function(id) {
+          var section = document.getElementById(id);
+          if (section) {
+            section.classList.add("kmib-article-section");
+            section.setAttribute("aria-hidden", "true");
+          }
+        });
+
+        html.classList.add("kmib-scroll-gated-ready");
+
+        document.addEventListener(
+          "click",
+          function(event) {
+            var link = event.target.closest('a[href^="#"]');
+            if (!link) return;
+
+            var href = link.getAttribute("href");
+            if (!href) return;
+
+            var targetId = href.slice(1);
+            if (!targetId || targetId === "article") {
+              targetId = "section-FB5fGPm547";
+            }
+
+            if (isArticleSection(targetId)) {
+              event.preventDefault();
+              openArticle(targetId);
+              return;
+            }
+
+            if (body.classList.contains("kmib-article-open") && isGuideSection(targetId)) {
+              event.preventDefault();
+              closeArticle(targetId);
+              return;
+            }
+
+            if (!body.classList.contains("kmib-article-open") && targetId === "section-FB5fGPm547") {
+              event.preventDefault();
+              scrollToSection(targetId, "smooth");
+            }
+          },
+          true
+        );
+
+        if (window.location.hash) {
+          var initialTargetId = window.location.hash.slice(1);
+          if (isArticleSection(initialTargetId)) {
+            openArticle(initialTargetId);
+          }
+        }
+      });
+    </script>
 
   </body>
 
