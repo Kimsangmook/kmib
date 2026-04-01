@@ -884,6 +884,31 @@
         position: relative;
       }
 
+      #section-FB5fGPm547 {
+        position: relative;
+      }
+
+      #section-FB5fGPm547 > .Layer--one {
+        position: relative;
+        z-index: 1;
+      }
+
+      #section-FB5fGPm547 > .Layer--two {
+        position: absolute !important;
+        inset: 0;
+        z-index: 0;
+      }
+
+      #section-FB5fGPm547 .Theme-BackgroundImage .FullSize--fixedChild,
+      #section-FB5fGPm547 .Theme-BackgroundImage .FullSize__fixedChild {
+        position: absolute !important;
+        top: calc(var(--kmib-header-offset) * -1);
+        right: 0;
+        left: 0;
+        bottom: auto;
+        height: calc(100% + var(--kmib-header-offset));
+      }
+
       @media (min-width: 996px) {
         .kmib-hero-credits {
           transform: translateY(28px);
